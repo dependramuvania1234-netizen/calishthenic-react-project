@@ -1,0 +1,115 @@
+/* Floating Navbar */
+.navbar {
+  position: fixed;
+  top: 20px;
+  width: 100%;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+}
+
+/* Glass Container */
+.nav-container {
+  width: 95%;
+  max-width: 1200px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  border-radius: 50px;
+  padding: 0.8rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Logo */
+.nav-logo {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.logo-text {
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+   color: chartreuse
+}
+
+.logo-subtext {
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+/* Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--accent-start);
+}
+
+/* Login Button */
+.nav-login {
+  margin-left: 1rem;
+  padding: 0.5rem 1.4rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-login:hover {
+  background: white;
+  color: black;
+}
+
+/* Hamburger */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 22px;
+  height: 2px;
+  background: white;
+  margin: 4px 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 90px;
+    left: -100%;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(0,0,0,0.95);
+    padding: 2rem 0;
+    transition: 0.3s;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+}

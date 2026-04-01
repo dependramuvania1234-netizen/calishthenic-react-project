@@ -1,0 +1,330 @@
+body {
+  background: #050b14;
+}
+
+.diet-plans-container {
+  padding: 50px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.diet-plans-container {
+  padding: 120px 50px 50px; /* top padding increased */
+}
+
+.diet-plans-title {
+  text-align: center;
+  font-size: 3rem;
+  background: linear-gradient(90deg, #06b323, #07fb99);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 40px;
+}
+
+/* Filter Styles */
+.diet-filter-container {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.diet-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.diet-filter-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.diet-filter-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.diet-filter-btn.active-filter {
+  background: linear-gradient(135deg, #06b323, #07fb99);
+  border-color: transparent;
+}
+
+/* Grid Layout */
+.diet-plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* Card Styles */
+.diet-plan-card {
+  position: relative;
+  height: 380px;
+  border-radius: 25px;
+  overflow: hidden;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: 0.4s ease;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.diet-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.diet-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.7);
+  transition: 0.4s ease;
+}
+
+.diet-plan-card:hover .diet-image-container img {
+  transform: scale(1.05);
+  filter: brightness(0.8);
+}
+
+.diet-plan-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(6, 179, 35, 0.3);
+}
+
+/* Overlay Styles */
+.diet-plan-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.diet-plan-title {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  line-height: 1.2;
+  word-wrap: break-word;
+}
+
+.diet-plan-calories {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.diet-category-tag {
+  display: inline-block;
+  background: rgba(6, 179, 35, 0.3);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  margin-top: 8px;
+  border: 1px solid rgba(6, 179, 35, 0.5);
+}
+
+/* Modal Styles */
+.diet-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+  z-index: 1000;
+}
+
+.diet-modal-box {
+  background: #0f262a;
+  padding: 40px;
+  border-radius: 25px;
+  max-width: 500px;
+  width: 90%;
+  border: 1px solid #06b323;
+  animation: slideUp 0.4s ease;
+  max-height: 80vh;
+  overflow-y: auto;
+  color: white;
+}
+
+.diet-modal-title {
+  color: #06b323;
+  margin-bottom: 20px;
+}
+
+.diet-modal-subtitle {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #06b323;
+}
+
+.diet-modal-info {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.diet-meal-list {
+  list-style: none;
+  padding: 0;
+}
+
+.diet-meal-item {
+  margin-bottom: 8px;
+  padding-left: 10px;
+  position: relative;
+}
+
+.diet-meal-item:before {
+  content: "🍽";
+  position: absolute;
+  left: -10px;
+}
+
+.diet-modal-close-btn {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #06b323, #07fb99);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.diet-modal-close-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+@keyframes slideUp {
+  from {transform: translateY(50px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .diet-plans-container {
+    padding: 100px 20px 30px;
+  }
+  
+  .diet-plans-title {
+    font-size: 2rem;
+  }
+  
+  .diet-filter-buttons {
+    gap: 5px;
+  }
+  
+  .diet-filter-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .diet-plans-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+  
+  .diet-plan-card {
+    height: 320px;
+  }
+  
+  .diet-plan-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .diet-plans-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .diet-plan-card {
+    height: 280px;
+  }
+  
+  .diet-plan-overlay {
+    padding: 15px;
+  }
+  
+  .diet-plan-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Custom Diet Section (inline) */
+.custom-diet-section {
+  margin-top: 40px;
+  padding: 30px;
+  background: rgba(15,38,42,0.6);
+  border: 1px solid rgba(6,179,35,0.12);
+  border-radius: 18px;
+}
+.custom-diet-box {
+  max-width: 1100px;
+  margin: 0 auto;
+  color: white;
+}
+.custom-diet-title {
+  color: #06b323;
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+.custom-diet-info {
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 14px;
+}
+.diet-modal-form input,
+.diet-modal-form select,
+.custom-diet-box input,
+.custom-diet-box select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+  color: white;
+  outline: none;
+  box-sizing: border-box;
+}
+.custom-diet-box input::placeholder { color: rgba(255,255,255,0.5); }
+.generate-diet-btn {
+  background: linear-gradient(135deg,#06b323,#07fb99);
+  color: #032018;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+.generate-diet-btn:hover { transform: translateY(-3px); }
+.custom-diet-result .api-error { color: #ff7b7b; margin-top: 8px; }
+.custom-diet-box pre { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.04); }
+
+@media (max-width: 768px) {
+  .custom-diet-section { padding: 20px; }
+  .custom-diet-box { padding: 0 8px; }
+  .custom-diet-box pre { font-size: 13px; }
+}

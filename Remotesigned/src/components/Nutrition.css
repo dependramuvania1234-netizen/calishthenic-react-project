@@ -1,0 +1,25 @@
+body{
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+.nutrition-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.nutrition-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.nutrition-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.nutrition  -list {
+    list-style-type: none;
+    padding: 0;
+}       

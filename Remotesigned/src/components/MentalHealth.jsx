@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './MentalHealth.css';
+import "./MentalHealth.css";
 import DBreathing from '../assets/DBreathing.jpg';
 import BBreathing from '../assets/BBreathing.webp';
 import Journaling from '../assets/journaling.webp';
